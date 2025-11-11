@@ -712,6 +712,7 @@ nav ul li a {
   font-size: 16px;
   line-height: 28px;
   color: #f4f6fc;
+  padding: 1rem 0;
 }
 
 .join .container .join-form .email-input {
@@ -852,7 +853,7 @@ nav ul li a {
 .container-top .footer-container .footer-top-row .footer-links {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 2.5rem;
 }
 
 .container-top .footer-container .footer-top-row .footer-links,
@@ -863,6 +864,9 @@ h4 {
   font-size: 20px;
   line-height: 118.5%;
 }
+.container-top .footer-container .footer-top-row .footer-links{
+  display: flex;
+  }
 
 .container-top
   .footer-container
@@ -879,7 +883,6 @@ h4 {
   .footer-top-row
   .footer-links
   .footer-links-col {
-  padding: 0 1rem;
   justify-content: center;
   align-items: center;
 }
