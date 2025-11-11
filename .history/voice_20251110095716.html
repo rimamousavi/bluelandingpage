@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آزمون تعیین سطح زبان انگلیسی</title>
+    <!-- استفاده از Tailwind CSS برای استایل‌دهی سریع و زیبا -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* فونت از این بخش حذف شد تا از فونت قالب شما ارث‌بری کند. */
+        .recording-indicator {
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+        /* کلاس برای چپ‌چین کردن محتوای انگلیسی */
+        .ltr-text {
+            direction: ltr;
+            text-align: left;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 dark:bg-slate-900 transition-colors duration-500">
+
+    <div id="quiz-container" class="max-w-3xl mx-auto p-4 md:p-8 bg-white dark:bg-slate-800 rounded-lg shadow-xl my-10 transition-colors duration-500">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-slate-800 dark:text-slate-100">آزمون تعیین سطح زبان انگلیسی</h1>
+            <!-- متن راهنما اصلاح شد -->
+            <p id="quiz-instruction" class="text-slate-600 dark:text-slate-400 mt-2">برای هر سوال می‌توانید پاسخ خود را به صورت صوتی، کتبی یا هر دو ثبت کنید.</p>
+        </div>
+
+        <!-- بخش سوالات آزمون -->
+        <div id="question-section" class="">
+            <div class="mb-6 p-5 bg-blue-50 dark:bg-slate-700 rounded-lg border border-blue-200 dark:border-slate-600">
+                <p class="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-2">سوال <span id="question-number">1</span> از <span id="total-questions"></span></p>
+                <p id="question-text" class="text-xl text-slate-800 dark:text-slate-100 ltr-text"></p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
+                <button id="record-btn" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-red-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-700 transition-colors duration-300">
+                    <i class="fas fa-microphone"></i>
+                    <span id="record-btn-text">پاسخ صوتی</span>
+                </button>
+                <audio id="audio-player" controls class="hidden w-full sm:w-auto mt-4 sm:mt-0"></audio>
+            </div>
+             <p id="status-text" class="text-center text-slate-500 dark:text-slate-400 mt-4 h-5"></p>
+
+            <div class="mt-6">
+                <label for="text-answer" class="block text-slate-700 dark:text-slate-300 font-bold mb-2">پاسخ کتبی خود را اینجا تایپ کنید:</label>
+                <textarea id="text-answer" rows="4" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 ltr-text bg-white dark:bg-slate-700 border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-200 dark:placeholder-slate-500 focus:ring-blue-500 dark:focus:ring-blue-400" placeholder="Type your answer here..."></textarea>
+            </div>
+        </div>
+
+        <!-- فرم اطلاعات کاربر (در ابتدا مخفی است) -->
+        <div id="user-info-section" class="hidden">
+            <h2 class="text-2xl font-bold text-center text-slate-800 dark:text-slate-100 mb-6">آزمون به پایان رسید!</h2>
+            <p class="text-center text-slate-600 dark:text-slate-400 mb-8">برای ارسال پاسخ‌ها، لطفا اطلاعات زیر را تکمیل کنید.</p>
+            <form id="submission-form">
+                <div class="mb-4">
+                    <label for="name" class="block text-slate-700 dark:text-slate-300 font-bold mb-2">نام و نام خانوادگی:</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 bg-white dark:bg-slate-700 border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-200 dark:placeholder-slate-500 focus:ring-blue-500 dark:focus:ring-blue-400" required>
+                </div>
+                <div class="mb-6">
+                    <label for="email" class="block text-slate-700 dark:text-slate-300 font-bold mb-2">ایمیل:</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 bg-white dark:bg-slate-700 border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-200 dark:placeholder-slate-500 focus:ring-blue-500 dark:focus:ring-blue-400" required>
+                </div>
+                <button type="submit" id="submit-btn" class="w-full bg-green-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-700 transition-colors duration-300 flex items-center justify-center gap-2">
+                    <span id="submit-btn-text">ارسال پاسخ‌ها</span>
+                    <i id="submit-spinner" class="fas fa-spinner fa-spin hidden"></i>
+                </button>
+            </form>
+        </div>
+
+        <div class="flex justify-between mt-8">
+            <button id="prev-btn" class="bg-slate-300 text-slate-800 font-bold py-2 px-6 rounded-lg hover:bg-slate-400 dark:bg-slate-600 dark:text-slate-200 dark:hover:bg-slate-500 transition-colors disabled:opacity-50" disabled>قبلی</button>
+            <button id="next-btn" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition-colors">بعدی</button>
+        </div>
+        
+        <div id="final-message" class="hidden mt-6 text-center p-4 rounded-lg"></div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const questions = [
+                "Please introduce yourself.", "What do you do in your free time?", "Why do you want to learn English?", "Describe your best friend.", "What are your plans for the future?"
+            ];
+            let currentQuestionIndex = 0;
+            let mediaRecorder;
+            let audioChunks = [];
+            const recordedAudios = new Array(questions.length).fill(null);
+            const writtenAnswers = new Array(questions.length).fill('');
+            const questionNumberEl = document.getElementById('question-number');
+            const totalQuestionsEl = document.getElementById('total-questions');
+            const questionTextEl = document.getElementById('question-text');
+            const recordBtn = document.getElementById('record-btn');
+            const recordBtnText = document.getElementById('record-btn-text');
+            const audioPlayer = document.getElementById('audio-player');
+            const statusText = document.getElementById('status-text');
+            const textAnswerEl = document.getElementById('text-answer');
+            const nextBtn = document.getElementById('next-btn');
+            const prevBtn = document.getElementById('prev-btn');
+            const quizInstruction = document.getElementById('quiz-instruction');
+            const questionSection = document.getElementById('question-section');
+            const userInfoSection = document.getElementById('user-info-section');
+            const submissionForm = document.getElementById('submission-form');
+            const finalMessage = document.getElementById('final-message');
+            const submitBtn = document.getElementById('submit-btn');
+            const submitBtnText = document.getElementById('submit-btn-text');
+            const submitSpinner = document.getElementById('submit-spinner');
+            function showQuestion(index) {
+                questionTextEl.textContent = questions[index];
+                questionNumberEl.textContent = index + 1;
+                totalQuestionsEl.textContent = questions.length;
+                audioPlayer.classList.add('hidden');
+                audioPlayer.src = '';
+                if (recordedAudios[index]) {
+                    const audioURL = URL.createObjectURL(recordedAudios[index]);
+                    audioPlayer.src = audioURL;
+                    audioPlayer.classList.remove('hidden');
+                    statusText.textContent = "پاسخ صوتی شما ضبط شده است.";
+                } else {
+                    statusText.textContent = "";
+                }
+                textAnswerEl.value = writtenAnswers[index];
+                updateNavButtons();
+                resetRecordingUI();
+            }
+            function updateNavButtons() {
+                prevBtn.disabled = currentQuestionIndex === 0;
+                nextBtn.textContent = (currentQuestionIndex === questions.length - 1) ? 'پایان آزمون' : 'بعدی';
+            }
+            function resetRecordingUI() {
+                recordBtn.classList.remove('bg-gray-500', 'recording-indicator');
+                recordBtn.classList.add('bg-red-600');
+                recordBtnText.textContent = 'پاسخ صوتی';
+                recordBtn.disabled = false;
+            }
+            function showFinalMessage(message, isSuccess) {
+                userInfoSection.classList.add('hidden');
+                finalMessage.innerHTML = message;
+                finalMessage.classList.remove('hidden');
+                finalMessage.className = 'final-message mt-6 text-center p-4 rounded-lg'; // Reset classes
+                if (isSuccess) {
+                    finalMessage.classList.add('bg-green-100', 'text-green-800', 'dark:bg-green-500/10', 'dark:text-green-300');
+                } else {
+                    finalMessage.classList.add('bg-red-100', 'text-red-800', 'dark:bg-red-500/10', 'dark:text-red-300');
+                }
+            }
+            textAnswerEl.addEventListener('input', () => { writtenAnswers[currentQuestionIndex] = textAnswerEl.value; });
+            recordBtn.addEventListener('click', async () => {
+                if (mediaRecorder && mediaRecorder.state === 'recording') {
+                    mediaRecorder.stop();
+                    recordBtn.classList.remove('recording-indicator'); recordBtnText.textContent = 'درحال پردازش...'; recordBtn.disabled = true;
+                } else {
+                    try {
+                        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                        mediaRecorder = new MediaRecorder(stream);
+                        audioChunks = [];
+                        mediaRecorder.ondataavailable = event => audioChunks.push(event.data);
+                        mediaRecorder.onstop = () => {
+                            const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+                            recordedAudios[currentQuestionIndex] = audioBlob;
+                            const audioUrl = URL.createObjectURL(audioBlob);
+                            audioPlayer.src = audioUrl; audioPlayer.classList.remove('hidden');
+                            resetRecordingUI();
+                            statusText.textContent = "پاسخ صوتی با موفقیت ضبط شد.";
+                            stream.getTracks().forEach(track => track.stop());
+                        };
+                        mediaRecorder.start();
+                        recordBtn.classList.add('recording-indicator'); recordBtnText.textContent = 'توقف ضبط'; statusText.textContent = "در حال ضبط... 🎙️";
+                    } catch (err) { statusText.textContent = "خطا در دسترسی به میکروفون."; alert("برای ضبط صدا، باید به این سایت اجازه دسترسی به میکروفون را بدهید."); }
+                }
+            });
+            nextBtn.addEventListener('click', () => {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++; showQuestion(currentQuestionIndex);
+                } else {
+                    questionSection.classList.add('hidden'); quizInstruction.classList.add('hidden'); prevBtn.classList.add('hidden'); nextBtn.classList.add('hidden'); userInfoSection.classList.remove('hidden');
+                }
+            });
+            prevBtn.addEventListener('click', () => { if (currentQuestionIndex > 0) { currentQuestionIndex--; showQuestion(currentQuestionIndex); } });
+            submissionForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                // این منطق چک می‌کند که حداقل یک نوع پاسخ (صوتی یا کتبی) برای هر سوال وجود داشته باشد
+                const unanswered = questions.filter((q, i) => !recordedAudios[i] && writtenAnswers[i].trim() === '');
+                if (unanswered.length > 0) { alert(`شما هنوز به ${unanswered.length} سوال پاسخ نداده‌اید. برای هر سوال باید حداقل یک پاسخ ثبت کنید.`); return; }
+                submitBtn.disabled = true; submitSpinner.classList.remove('hidden'); submitBtnText.textContent = 'در حال ارسال...';
+                const formData = new FormData(submissionForm);
+                formData.append('questions', JSON.stringify(questions));
+                recordedAudios.forEach((audioBlob, i) => { if (audioBlob) { formData.append(`audio_answer_${i + 1}`, audioBlob, `question_${i + 1}.webm`); } });
+                writtenAnswers.forEach((text, i) => { formData.append(`text_answer_${i + 1}`, text); });
+                try {
+                    const response = await fetch('/send_email.php', { method: 'POST', body: formData });
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        throw new Error(`خطای سرور: ${response.status}. <br> پاسخ سرور: ${errorText}`);
+                    }
+                    const result = await response.json();
+                    if (result.success) {
+                        showFinalMessage(`<strong>متشکریم!</strong> پاسخ‌های شما با موفقیت ارسال شد.`, true);
+                    } else { throw new Error(result.message || 'خطای ناشناخته در ارسال ایمیل.'); }
+                } catch (error) {
+                    console.error('Submission error:', error);
+                    showFinalMessage(`<strong>خطا!</strong> مشکلی در ارسال پاسخ‌ها پیش آمد. <br><small>${error.message}</small>`, false);
+                } finally {
+                    submitBtn.disabled = false; submitSpinner.classList.add('hidden'); submitBtnText.textContent = 'ارسال پاسخ‌ها';
+                }
+            });
+            showQuestion(currentQuestionIndex);
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه فرود زیبا</title>
+    
+    <!-- افزودن فونت‌های وزیرمتن و اینتر برای ظاهر بهتر -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* * متغیرهای CSS برای مدیریت آسان رنگ‌ها و فونت‌ها
+         */
+        :root {
+            --primary-color: #4a90e2; /* آبی دلپذیر */
+            --secondary-color: #50e3c2; /* سبز/تیل تازه */
+            --dark-color: #333;
+            --light-color: #f9f9f9;
+            --text-color: #555;
+            --font-primary: 'Vazirmatn', 'Inter', sans-serif;
+            --border-radius-base: 8px;
+        }
+
+        /* * ریست کردن استایل‌های پیش‌فرض و تنظیمات پایه
+         */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: #ffffff;
+            color: var(--text-color);
+            line-height: 1.6;
+            direction: rtl; /* تنظیم جهت برای زبان فارسی */
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        h1, h2, h3 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* * استایل دکمه‌های عمومی
+         */
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: var(--border-radius-base);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #3a7bc8;
+            transform: translateY(-2px); /* افکت شناور شدن کوچک */
+        }
+
+        .btn-secondary {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .btn-secondary:hover {
+            background: #40c0a0;
+        }
+
+        /* * هدر و منوی ناوبری
+         */
+        .navbar {
+            background: #fff;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #eee;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar .nav-links li {
+            margin-right: 2rem; /* استفاده از margin-right برای RTL */
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* * بخش Hero (اصلی)
+         */
+        .hero {
+            background: var(--light-color);
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            margin-top: 2rem;
+            border-radius: var(--border-radius-base);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* * بخش امکانات
+         */
+        .features {
+            padding: 5rem 0;
+        }
+
+        .features .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            /* ستون‌های واکنش‌گرا که به طور خودکار تنظیم می‌شوند */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .feature-card .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* * بخش فراخوانی برای اقدام (Callout)
+         */
+        .callout {
+            background-color: var(--primary-color);
+            background-image: linear-gradient(45deg, var(--primary-color), #3a7bc8);
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin: 4rem auto;
+        }
+
+        .callout h2 {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+
+        .callout .btn {
+            background: #fff;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .callout .btn:hover {
+            background: #f0f0f0;
+        }
+
+        /* * فوتر
+         */
+        .footer {
+            background: var(--dark-color);
+            color: #ccc;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* * طراحی واکنش‌گرا (Responsive) برای موبایل
+         */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            /* مخفی کردن لینک‌های منو در موبایل (برای سادگی) */
+            /* در یک پروژه واقعی، اینجا یک منوی همبرگری قرار می‌گیرد */
+            .navbar .nav-links {
+                display: none; 
+            }
+
+            .navbar .container {
+                justify-content: center;
+                position: relative;
+            }
+
+            /* دکمه ثبت نام را در موبایل متفاوت نمایش می‌دهیم */
+            .navbar .btn {
+                position: absolute;
+                left: 20px; /* راست برای RTL */
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .navbar .logo {
+                text-align: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr; /* ستون‌ها در موبایل روی هم قرار می‌گیرند */
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">لوگو شما</a>
+            <ul class="nav-links">
+                <li><a href="#features">امکانات</a></li>
+                <li><a href="#callout">فراخوانی</a></li>
+                <li><a href="#">درباره ما</a></li>
+                <li><a href="#">تماس</a></li>
+            </ul>
+            <a href="#" class="btn btn-secondary">ثبت نام</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>محصول شگفت‌انگیز شما</h1>
+            <p>یک توضیح کوتاه و جذاب در مورد اینکه محصول شما چگونه زندگی مردم را بهتر می‌کند.</p>
+            <a href="#" class="btn">رایگان شروع کنید</a>
+            
+            <!-- استفاده از placeholder برای تصویر -->
+            <img src="https://placehold.co/600x400/4a90e2/ffffff?text=تصویر+محصول+شما&font=vazirmatn" 
+                 alt="تصویر محصول" 
+                 onerror="this.src='https://placehold.co/600x400/cccccc/ffffff?text=خطا+در+بارگذاری+تصویر&font=vazirmatn'"
+                 class="hero-image">
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">چرا ما را انتخاب کنید؟</h2>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="icon">🚀</div> <!-- آیکون اموجی برای سادگی -->
+                    <h3>سریع و بهینه</h3>
+                    <p>محصول ما با آخرین تکنولوژی‌ها ساخته شده و سرعت بی‌نظیری را ارائه می‌دهد.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="icon">🔒</div> <!-- آیکون اموجی برای سادگی -->
+                    <h3>امنیت بالا</h3>
+                    <p>ما به امنیت داده‌های شما اهمیت می‌دهیم و از پروتکل‌های امنیتی پیشرفته استفاده می‌کنیم.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="icon">💬</div> <!-- آیکون اموجی برای سادگی -->
+                    <h3>پشتیبانی ۲۴/۷</h3>
+                    <p>تیم پشتیبانی ما همیشه آماده پاسخگویی به سوالات و مشکلات شما عزیزان است.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Callout Section -->
+    <section id="callout" class="callout">
+        <div class="container">
+            <h2>آماده‌اید تا شروع کنید؟</h2>
+            <p>همین امروز به صورت رایگان ثبت نام کنید و تفاوت را احساس کنید.</p>
+            <a href="#" class="btn">ایجاد حساب کاربری</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; ۱۴۰۳ - تمام حقوق برای «لوگو شما» محفوظ است.</p>
+        </div>
+    </footer>
+</body>
+</html>
