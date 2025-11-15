@@ -58,10 +58,6 @@
   .offcanvass.open {
     right: 0;
   }
-  .open-menu-btn svg {
-    width: 16px;
-    height: 16px;
-  }
   .hamburger-menu.is-active .open-menu-btn {
     display: none;
   }
@@ -158,7 +154,10 @@
     width: 100%;
   }
   .person .container .person-slider .person-slide .figure .author-info {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    justify-content: end;
   }
   .slider-nav {
     padding-left: 0;
@@ -207,6 +206,10 @@
     height: auto;
     font-size: 18px;
     line-height: 1.5;
+  }
+  .person .container .person-slider .person-slide .figure .author-info img {
+    height: 75px;
+    width: 75px;
   }
 
   #questions .container {

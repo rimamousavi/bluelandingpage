@@ -446,6 +446,7 @@ nav ul li a {
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  gap: 1rem;
 }
 
 .person .container .person-intro h2 {
