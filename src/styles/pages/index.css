@@ -654,6 +654,7 @@ nav ul li a {
 .join .container .join-form {
   background-color: rgba(28, 30, 83, 1);
   padding: 5rem;
+  width: -webkit-fill-available;
 }
 
 .join .container .join-form h2 {
