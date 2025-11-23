@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+:root{
+    --container: 1440px;
+    --font-popins: 'Poppins';
+}
+
+html,body{
+    font-family: var(--font-popins);
+    @apply overflow-x-hidden;
+    
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0;
+  @apply md:px-32 md:pt-7 px-6 pt-4;
+}
+
+
+@media (max-width: 768px) {
+  .menu-overlay {
+    @apply fixed top-0 left-0 w-full h-screen opacity-50
+  }
+}
+
+.h2{
+  @apply font-semibold text-4xl leading-16 text-[#282938];
+}
+.p{
+  @apply leading-7 text-[#202020] opacity-70;
+}
+.padding-section{
+    @apply py-12 md:py-24;
+}
+  .offcanvas {
+    @apply fixed top-0 w-[70%] h-screen bg-white right-[-70%] z-100 duration-300 ease-in-out;
+  }
+  .offcanvas.open {
+    @apply right-0;
+  }
+  .offcanvas ul {
+    @apply  pt-12 pb-5 px-5  list-none m-0;
+  }
+  .offcanvas ul li a {
+    @apply text-black block py-3 px-2 decoration-0
+  }
+  .offcanvas .btn-secondary {
+    @apply flex justify-center m-7 p-2 text-lg text-black border-2 border-solid border-black rounded-4xl  ;
+    border: black 2px solid;
+  }
+
+  .no-scroll{
+  @apply overflow-y-hidden fixed w-full;
+}
+.keen-slider__slide {
+  @apply flex bg-white p-7 rounded-2xl flex-col justify-between items-start h-auto min-h-44 box-border gap-2
+  
+}
+.slider-container {
+
+  @apply relative flex flex-col-reverse
+}
+.person-img{
+  @apply w-12 h-12 rounded-full
+}
+.slider-nav {
+  @apply flex justify-end gap-1
+}
+.nav-arrow {
+  @apply flex items-center justify-center transition-all transition duration-300 ease-in w-12 h-12 border border-solid border-neutral-200 rounded-full cursor-pointer 
+}
+
+.nav-arrow:hover {
+  @apply bg-[#2405f2] text-white border-[#2405f2]
+}
+
+#questions .number {
+  @apply flex w-8 h-8 items-center justify-center text-[#ff6b42] bg-white font-bold
+}
+#questions summary::-webkit-details-marker {
+  @apply hidden 
+}
+
+#questions summary {
+  @apply list-none cursor-pointer flex items-center gap-4 font-semibold text-[#232323]
+}
+#questions details {
+  @apply bg-white py-4 px-5 rounded-xl relative border-b-2 border-solid border-b-gray-300
+}
+#questions .content {
+  @apply text-[#6b6b6b] mt-4 pl-13 text-base/7
+}
+
+#questions summary::after {
+  @apply content-["+"] ml-auto text-[#bfc9d6] font-bold text-lg transition-colors transition-transform duration-150 ease-in-out;
+}
+
+#questions details[open] summary::after {
+  @apply content-["\2212"] text-[#ff6b42]
+}
+
+#questions details + details {
+  @apply mt-3;
+}
+
+.join-content {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)), url("./../../assets/bgjoin.png");
+  @apply bg-cover bg-center text-white w-full p-20;
+}
+
+.join-content h2 {
+  @apply text-5xl/snug text-white pr-5
+
+}
+
+.join-content p {
+  @apply font-medium text-base/6 text-white pr-4;
+}
+
+ .join-form {
+  @apply bg-[#1c1e53] p-16 flex flex-col gap-4;
+  
+}
+
+ .join-form h2 {
+  @apply text-5xl/snug text-white pr-5;
+}
+
+ .join-form p {
+    @apply text-base/snug text-white pr-5 py-1 px-0;
+}
+
+ .join-form .email-input {
+  @apply flex flex-col gap-5
+}
+
+ .join-form .email-input #email {
+  @apply h-16 border-2 border-solid border-[#ffffff0d] rounded-lg bg-[#1c1e53] text-white p-4; 
+ }
+ .join-form .email-input .submit-btn {
+  @apply inline-flex py-4 px-15 bg-[#fcd980] rounded-4xl text-[#1b1c2b] font-semibold text-lg transition-all duration-300 ease-in-out border-0;
+}
+.card-image-placeholder {
+  @apply h-60 bg-[#bfc9d6]
+}
+.card-content{
+  @apply flex flex-col justify-start gap-3
+}
+.post-date{
+  @apply py-4
+}
+.post-title{
+  @apply font-semibold
+}
+.post-excerpt{
+  @apply line-clamp-4 font-light
+}
+h4{
+  @apply text-white font-semibold
+}

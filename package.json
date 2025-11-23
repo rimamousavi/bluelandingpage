@@ -1,0 +1,24 @@
+{
+  "name": "bluelandingpage",
+  "version": "1.0.0",
+  "description": "rima's first project",
+  "main": "index.js",
+  "scripts": {
+    "watch": "npx @tailwindcss/cli -i ./src/styles/main.css -o ./src/styles/output/index.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rimabmousavi/bluelandingpage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rimabmousavi/bluelandingpage/issues"
+  },
+  "homepage": "https://github.com/rimabmousavi/bluelandingpage#readme",
+  "dependencies": {
+    "tailwindcss": "^4.1.17"
+  }
+}

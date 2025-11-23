@@ -113,11 +113,17 @@ function AutoPlay(slider) {
   }, 3000);
 }
 
-var slider2 = new KeenSlider("#person-keen-slider", {}, [navigation,AutoPlay]);
-
+var slider2 = null;
 
 document.addEventListener("DOMContentLoaded", function () {
-  
+  // Initialize the keen slider after DOM is ready to ensure element exists
+  try {
+    slider2 = new KeenSlider("#person-keen-slider", {}, [navigation]);
+  } catch (e) {
+    console.warn('KeenSlider initialization failed:', e);
+    slider2 = null;
+  }
+
   var prevBtn = document.querySelector('#person-slider-nav .nav-arrow.prev');
   var nextBtn = document.querySelector('#person-slider-nav .nav-arrow.next');
   if (prevBtn) {

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>first figma landing page</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,17 +16,20 @@
       href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./styles/output/index.css" />
   </head>
   <body>
     <div id="overlay" class="menu-overlay hidden"></div>
-    <header>
+    <header class="sticky z-200">
       <nav>
-        <div class="menu">
-          <div class="logo-container">
-            <a href="#" class="logo">Kilppd</a>
+        <div
+          class="flex flex-row items-center justify-between px-6 md:px-32 py-6 backdrop-blur-md bg-[#1c1e53] text-amber-50"
+        >
+          <div>
+            <a href="#" class="text-2xl font-bold">Kilppd</a>
           </div>
-          <div class="menu-container">
-            <ul>
+          <div class="hidden md:flex flex-row items-center gap-10">
+            <ul class="flex flex-row gap-8 text-lg">
               <li><a href="#">Home</a></li>
               <li><a href="#">About Us</a></li>
               <li><a href="#">Kilppd Creates</a></li>
@@ -33,12 +37,19 @@
               <li><a href="#">FAQ</a></li>
               <li><a href="#">Blog</a></li>
             </ul>
-            <a href="#" class="btn btn-secondary">Download app</a>
+            <a
+              href="#"
+              class="bg-transparent border-2 border-white/10 py-3 px-5 rounded-4xl"
+              >Download app</a
+            >
           </div>
-          <div class="hamburger-menu">
-            <button class="open-menu-btn">&#9776;</button>
+          <div class="hamburger-menu md:hidden">
+            <button
+              class="open-menu-btn relative z-201 text-2xl focus:text-black"
+            >
+              &#9776;
+            </button>
             <div class="offcanvas">
-              <!-- <button class="close-menu-btn">&times;</button> -->
               <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About Us</a></li>
@@ -53,37 +64,776 @@
         </div>
       </nav>
     </header>
-    
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1>:Unleash Creativity in Real-Time</h1>
+    <main>
+      <section class="padding-section bg-[#1c1e53]">
+        <div class="container grid grid-cols-1 md:grid-cols-12 gap-4">
+          <div class="hero-content grid grid-cols-1 md:col-span-6">
+            <div><h1 class="text-5xl leading-tight font-semibold pb-6 text-white">
+              Unleash Creativity in Real-Time
+            </h1></div>
+            <div><p class="text-white opacity-70">
+              KLIPPD: Revolutionizing the way casters create, monetize and share
+              authentic moments.
+            </p></div>
+            <div>
+              <a
+                href="#"
+                class="inline-block bg-[#fcd980] text-black px-4 py-2 no-underline rounded-full font-semibold transition-all duration-180 ease border-0"
+                >Contact Us</a
+              >
+            </div>
+          </div>
+          <div class="md:col-span-6">
+            <img
+              src="assets/Illustration.png"
+              alt="Illustration"
+              class="hero-image"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="padding-section">
+        <div class="container grid grid-cols-1 md:grid-cols-12 gap-4">
+          <div class="md:col-span-6 grid">
+            <h2 class="h2">Get The App Here</h2>
+            <p class="leading-7 text-[#202020] opacity-70">
+              Join Klipped and take the experience of making content to a new
+              level, make money or see whats special out there
+            </p>
+          </div>
+          <div class="md:col-span-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="">
+              <a href="#" aria-label="Get it on Google Play">
+                <img src="assets/googleplay.svg" alt="Get it on Google Play" />
+              </a>
+            </div>
+            <div class="">
+              <a href="#" aria-label="Download on the App Store">
+                <img
+                  src="assets/appstore.png"
+                  alt="Download on the App Store"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="padding-section bg-[#f4f6fc]">
+        <div class="container grid grid-cols-1 md:grid-cols-12 gap-4">
+          <div class="md:col-span-6">
+            <h2 class="h2 pb-8">About us</h2>
+            <p class="p">The #1 Platform for Live Casters</p>
+            <a
+              href="#"
+              class="italic font-medium text-lg leading-8 text-[#2405f2]"
+            >
+              Get in touch with us
+              <span class="pl-1 text-[#f66329]">&rarr;</span>
+            </a>
+          </div>
+          <div class="md:col-span-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 gap-2">
+              <div class="icon">
+                <svg
+                  width="50"
+                  height="50"
+                  viewBox="0 0 50 50"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="50" height="50" rx="8" fill="#2405F2" />
+                  <mask
+                    id="mask0_1_2001"
+                    style="mask-type: alpha"
+                    maskUnits="userSpaceOnUse"
+                    x="0"
+                    y="0"
+                    width="50"
+                    height="50"
+                  >
+                    <rect width="50" height="50" rx="8" fill="#5C5E84" />
+                  </mask>
+                  <g mask="url(#mask0_1_2001)">
+                    <rect
+                      x="-26"
+                      y="27"
+                      width="50"
+                      height="50"
+                      rx="8"
+                      fill="#FCD980"
+                    />
+                    <rect
+                      x="8"
+                      y="-9"
+                      width="50"
+                      height="50"
+                      rx="8"
+                      fill="#5239FA"
+                    />
+                  </g>
+                  <path
+                    d="M17.124 29.218C16.428 28.054 16.08 26.452 16.08 24.412C16.08 22.384 16.428 20.788 17.124 19.624C17.832 18.46 19.044 17.878 20.76 17.878C22.476 17.878 23.682 18.46 24.378 19.624C25.086 20.788 25.44 22.384 25.44 24.412C25.44 26.452 25.086 28.054 24.378 29.218C23.682 30.382 22.476 30.964 20.76 30.964C19.044 30.964 17.832 30.382 17.124 29.218ZM23.226 26.842C23.358 26.182 23.424 25.372 23.424 24.412C23.424 23.464 23.358 22.66 23.226 22C23.106 21.34 22.854 20.8 22.47 20.38C22.086 19.96 21.516 19.75 20.76 19.75C20.004 19.75 19.434 19.96 19.05 20.38C18.666 20.8 18.408 21.34 18.276 22C18.156 22.66 18.096 23.464 18.096 24.412C18.096 25.372 18.156 26.182 18.276 26.842C18.408 27.502 18.666 28.042 19.05 28.462C19.434 28.882 20.004 29.092 20.76 29.092C21.516 29.092 22.086 28.882 22.47 28.462C22.854 28.042 23.106 27.502 23.226 26.842ZM27.3413 20.092V18.22H31.0853V31H29.0153V20.092H27.3413Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-bold">Subs & Events</h3>
+              <p class="p">
+                Offer memberships, subscriptions, and live events tailored to
+                their audience.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 gap-2">
+              <div class="icon">
+                <svg
+                  width="50"
+                  height="50"
+                  viewBox="0 0 50 50"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="50" height="50" rx="8" fill="#2405F2" />
+                  <mask
+                    id="mask0_1_2023"
+                    style="mask-type: alpha"
+                    maskUnits="userSpaceOnUse"
+                    x="0"
+                    y="0"
+                    width="50"
+                    height="50"
+                  >
+                    <rect width="50" height="50" rx="8" fill="#5C5E84" />
+                  </mask>
+                  <g mask="url(#mask0_1_2023)">
+                    <rect
+                      x="-26"
+                      y="27"
+                      width="50"
+                      height="50"
+                      rx="8"
+                      fill="#FCD980"
+                    />
+                    <rect
+                      x="8"
+                      y="-9"
+                      width="50"
+                      height="50"
+                      rx="8"
+                      fill="#5239FA"
+                    />
+                  </g>
+                  <path
+                    d="M17.124 29.218C16.428 28.054 16.08 26.452 16.08 24.412C16.08 22.384 16.428 20.788 17.124 19.624C17.832 18.46 19.044 17.878 20.76 17.878C22.476 17.878 23.682 18.46 24.378 19.624C25.086 20.788 25.44 22.384 25.44 24.412C25.44 26.452 25.086 28.054 24.378 29.218C23.682 30.382 22.476 30.964 20.76 30.964C19.044 30.964 17.832 30.382 17.124 29.218ZM23.226 26.842C23.358 26.182 23.424 25.372 23.424 24.412C23.424 23.464 23.358 22.66 23.226 22C23.106 21.34 22.854 20.8 22.47 20.38C22.086 19.96 21.516 19.75 20.76 19.75C20.004 19.75 19.434 19.96 19.05 20.38C18.666 20.8 18.408 21.34 18.276 22C18.156 22.66 18.096 23.464 18.096 24.412C18.096 25.372 18.156 26.182 18.276 26.842C18.408 27.502 18.666 28.042 19.05 28.462C19.434 28.882 20.004 29.092 20.76 29.092C21.516 29.092 22.086 28.882 22.47 28.462C22.854 28.042 23.106 27.502 23.226 26.842ZM28.7812 28.174C29.9333 27.19 30.8393 26.38 31.4993 25.744C32.1593 25.108 32.7053 24.454 33.1373 23.782C33.5813 23.098 33.8033 22.426 33.8033 21.766C33.8033 21.082 33.6293 20.542 33.2813 20.146C32.9453 19.75 32.4113 19.552 31.6793 19.552C30.9713 19.552 30.4193 19.78 30.0233 20.236C29.6393 20.68 29.4353 21.28 29.4113 22.036H27.4313C27.4673 20.668 27.8753 19.624 28.6553 18.904C29.4473 18.172 30.4493 17.806 31.6613 17.806C32.5373 17.806 33.2873 17.968 33.9113 18.292C34.5353 18.616 35.0093 19.072 35.3333 19.66C35.6693 20.248 35.8373 20.92 35.8373 21.676C35.8373 22.504 35.6153 23.308 35.1713 24.088C34.7393 24.868 34.2233 25.57 33.6233 26.194C33.0233 26.818 32.2553 27.544 31.3193 28.372L30.4913 29.11H36.1973V30.82H27.4493V29.326L28.7812 28.174Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-bold">NFTs & Collabs</h3>
+              <p class="p">
+                Monetize through NFTs, audience investments, and collaborations.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 gap-2">
+              <div class="icon">
+                <svg
+                  width="50"
+                  height="50"
+                  viewBox="0 0 50 50"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="50" height="50" rx="8" fill="#2405F2" />
+                  <mask
+                    id="mask0_1_2012"
+                    style="mask-type: alpha"
+                    maskUnits="userSpaceOnUse"
+                    x="0"
+                    y="0"
+                    width="50"
+                    height="50"
+                  >
+                    <rect width="50" height="50" rx="8" fill="#5C5E84" />
+                  </mask>
+                  <g mask="url(#mask0_1_2012)">
+                    <rect
+                      x="-26"
+                      y="27"
+                      width="50"
+                      height="50"
+                      rx="8"
+                      fill="#FCD980"
+                    />
+                    <rect
+                      x="8"
+                      y="-9"
+                      width="50"
+                      height="50"
+                      rx="8"
+                      fill="#5239FA"
+                    />
+                  </g>
+                  <path
+                    d="M17.124 29.218C16.428 28.054 16.08 26.452 16.08 24.412C16.08 22.384 16.428 20.788 17.124 19.624C17.832 18.46 19.044 17.878 20.76 17.878C22.476 17.878 23.682 18.46 24.378 19.624C25.086 20.788 25.44 22.384 25.44 24.412C25.44 26.452 25.086 28.054 24.378 29.218C23.682 30.382 22.476 30.964 20.76 30.964C19.044 30.964 17.832 30.382 17.124 29.218ZM23.226 26.842C23.358 26.182 23.424 25.372 23.424 24.412C23.424 23.464 23.358 22.66 23.226 22C23.106 21.34 22.854 20.8 22.47 20.38C22.086 19.96 21.516 19.75 20.76 19.75C20.004 19.75 19.434 19.96 19.05 20.38C18.666 20.8 18.408 21.34 18.276 22C18.156 22.66 18.096 23.464 18.096 24.412C18.096 25.372 18.156 26.182 18.276 26.842C18.408 27.502 18.666 28.042 19.05 28.462C19.434 28.882 20.004 29.092 20.76 29.092C21.516 29.092 22.086 28.882 22.47 28.462C22.854 28.042 23.106 27.502 23.226 26.842ZM31.8773 17.572C32.7173 17.572 33.4433 17.722 34.0553 18.022C34.6673 18.322 35.1293 18.73 35.4413 19.246C35.7533 19.762 35.9093 20.344 35.9093 20.992C35.9093 21.736 35.7113 22.372 35.3153 22.9C34.9193 23.428 34.4453 23.782 33.8933 23.962V24.034C34.6013 24.25 35.1533 24.646 35.5493 25.222C35.9453 25.786 36.1433 26.512 36.1433 27.4C36.1433 28.108 35.9813 28.738 35.6573 29.29C35.3333 29.842 34.8533 30.28 34.2173 30.604C33.5813 30.916 32.8193 31.072 31.9313 31.072C30.6353 31.072 29.5673 30.742 28.7273 30.082C27.8993 29.41 27.4553 28.45 27.3953 27.202H29.3753C29.4233 27.838 29.6693 28.36 30.1133 28.768C30.5573 29.164 31.1573 29.362 31.9133 29.362C32.6453 29.362 33.2093 29.164 33.6053 28.768C34.0013 28.36 34.1993 27.838 34.1993 27.202C34.1993 26.362 33.9293 25.768 33.3893 25.42C32.8613 25.06 32.0453 24.88 30.9413 24.88H30.4733V23.188H30.9593C31.9313 23.176 32.6693 23.014 33.1733 22.702C33.6893 22.39 33.9473 21.898 33.9473 21.226C33.9473 20.65 33.7613 20.194 33.3893 19.858C33.0173 19.51 32.4893 19.336 31.8053 19.336C31.1333 19.336 30.6113 19.51 30.2393 19.858C29.8673 20.194 29.6453 20.614 29.5733 21.118H27.5753C27.6473 20.002 28.0733 19.132 28.8533 18.508C29.6453 17.884 30.6533 17.572 31.8773 17.572Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-bold">Fans & AI Safety</h3>
+              <p class="p">
+                Strengthen their connection with fans while future-proofing
+                their work against Al replication.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 gap-2">
+              <div class="icon">
+                <svg
+                  width="50"
+                  height="50"
+                  viewBox="0 0 50 50"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="50" height="50" rx="8" fill="#2405F2" />
+                  <mask
+                    id="mask0_1_2034"
+                    style="mask-type: alpha"
+                    maskUnits="userSpaceOnUse"
+                    x="0"
+                    y="0"
+                    width="50"
+                    height="50"
+                  >
+                    <rect width="50" height="50" rx="8" fill="#5C5E84" />
+                  </mask>
+                  <g mask="url(#mask0_1_2034)">
+                    <rect
+                      x="-26"
+                      y="27"
+                      width="50"
+                      height="50"
+                      rx="8"
+                      fill="#FCD980"
+                    />
+                    <rect
+                      x="8"
+                      y="-9"
+                      width="50"
+                      height="50"
+                      rx="8"
+                      fill="#5239FA"
+                    />
+                  </g>
+                  <path
+                    d="M17.124 29.218C16.428 28.054 16.08 26.452 16.08 24.412C16.08 22.384 16.428 20.788 17.124 19.624C17.832 18.46 19.044 17.878 20.76 17.878C22.476 17.878 23.682 18.46 24.378 19.624C25.086 20.788 25.44 22.384 25.44 24.412C25.44 26.452 25.086 28.054 24.378 29.218C23.682 30.382 22.476 30.964 20.76 30.964C19.044 30.964 17.832 30.382 17.124 29.218ZM23.226 26.842C23.358 26.182 23.424 25.372 23.424 24.412C23.424 23.464 23.358 22.66 23.226 22C23.106 21.34 22.854 20.8 22.47 20.38C22.086 19.96 21.516 19.75 20.76 19.75C20.004 19.75 19.434 19.96 19.05 20.38C18.666 20.8 18.408 21.34 18.276 22C18.156 22.66 18.096 23.464 18.096 24.412C18.096 25.372 18.156 26.182 18.276 26.842C18.408 27.502 18.666 28.042 19.05 28.462C19.434 28.882 20.004 29.092 20.76 29.092C21.516 29.092 22.086 28.882 22.47 28.462C22.854 28.042 23.106 27.502 23.226 26.842ZM27.3593 28.264V26.716L33.4073 18.04H35.8913V26.482H37.5653V28.264H35.8913V31H33.8753V28.264H27.3593ZM33.9653 20.128L29.7173 26.482H33.9653V20.128Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-bold">Grow & Earn</h3>
+              <p class="p">
+                Expand their reach and revenue through exclusive content,
+                premium experiences, and direct engagement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="gallery" class="padding-section">
+        <div class="container grid grid-cols-1 gap-4">
+          <div class="content">
+            <div class="paragraph">
+              <h2 class="h2">Empower Your Creativity with Kilppd</h2>
+              <p class="p">
+                Discover the future of genuine content creation and
+                monetization.
+              </p>
+            </div>
+            <div class="link">
+              <a href="#" class="view-more-link">
+                view More <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3">
+            <div
+              class="card1 bg-linear-to-tl from-[#1c1e53] to-[rgba(28,30,83,0.42)] pt-80 px-8 pb-8"
+            >
+              <h2 class="font-bold text-amber-50">Content Safeguarding</h2>
+              <div class="light-paragraph">
+                <p class="text-amber-50">
+                  <strong class="text-amber-50">CASTERS:</strong>
+                  Shield your creations with Kilppd's Live Safe to safeguard
+                  your work from duplication.
+                </p>
+                <p class="text-amber-50">
+                  <strong class="text-amber-50">FANS:</strong>
+                  INVEST in original authenticated content that will only raise
+                  in value.
+                </p>
+              </div>
+              <div class="link">
+                <a href="#" class="text-[#fcd980]">Learn more &rarr;</a>
+              </div>
+            </div>
+            <div class="card2 bg-neutral-300"></div>
+            <div class="card3-4 grid gap-6 ml-6">
+              <div
+                class="card3 bg-linear-to-tl from-[#1c1e53] to-[rgba(28,30,83,0.42)] py-4 px-8"
+              >
+                <h2 class="text-amber-50">Authentic Engagement</h2>
+                <div class="link">
+                  <a href="#" class="text-[#fcd980]">Learn more &rarr;</a>
+                </div>
+              </div>
+              <div class="card4 bg-neutral-300 py-2 px-8"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="features-card" class="padding-section bg-[#f4f6fc]">
+        <div class="container grid grid-cols-1 gap-4 justify-items-center">
+          <div
+            class="paragraph-features grid justify-center justify-items-center"
+          >
+            <p class="font-normal">Features</p>
+            <h2 class="h2">Key Features</h2>
+          </div>
+          <div
+            class="grid grid-cols-1 gap-4 md:grid-cols-3 justify-items-center"
+          >
+            <div class="grid gap-2 grid-cols-1 p-2 bg-white rounded-md">
+              <div class="icon">
+                <svg
+                  width="32"
+                  height="28"
+                  viewBox="0 0 32 28"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.9999 10.8749C19.0029 10.8749 21.4373 8.44047 21.4373 5.43745C21.4373 2.43443 19.0029 0 15.9999 0C12.9968 0 10.5624 2.43443 10.5624 5.43745C10.5624 8.44047 12.9968 10.8749 15.9999 10.8749Z"
+                    fill="#2405F2"
+                  />
+                  <path
+                    d="M27 10.8749C28.8984 10.8749 30.4374 9.33593 30.4374 7.43747C30.4374 5.53901 28.8984 4 27 4C25.1015 4 23.5625 5.53901 23.5625 7.43747C23.5625 9.33593 25.1015 10.8749 27 10.8749Z"
+                    fill="#2405F2"
+                  />
+                  <path
+                    d="M4.99995 10.8749C6.89842 10.8749 8.43742 9.33593 8.43742 7.43747C8.43742 5.53901 6.89842 4 4.99995 4C3.10149 4 1.56248 5.53901 1.56248 7.43747C1.56248 9.33593 3.10149 10.8749 4.99995 10.8749Z"
+                    fill="#2405F2"
+                  />
+                  <path
+                    d="M8.3868 13.9615C7.03369 12.8528 5.80826 12.9996 4.24371 12.9996C1.90373 12.9996 0 14.8921 0 17.2177V24.0432C0 25.0532 0.824368 25.8745 1.83811 25.8745C6.21469 25.8745 5.68745 25.9537 5.68745 25.6857C5.68745 20.8491 5.11458 17.3022 8.3868 13.9615Z"
+                    fill="#2405F2"
+                  />
+                  <path
+                    d="M17.4882 13.0249C14.7555 12.797 12.3802 13.0275 10.3314 14.7187C6.90288 17.4649 7.56268 21.1625 7.56268 25.6861C7.56268 26.8829 8.53642 27.8748 9.75141 27.8748C22.9439 27.8748 23.469 28.3003 24.2513 26.5679C24.5078 25.9821 24.4375 26.1682 24.4375 20.5636C24.4375 16.112 20.583 13.0249 17.4882 13.0249Z"
+                    fill="#2405F2"
+                  />
+                  <path
+                    d="M27.7564 13.0004C26.1833 13.0004 24.9646 12.8552 23.6133 13.9623C26.8611 17.2783 26.3126 20.5832 26.3126 25.6865C26.3126 25.9562 25.8749 25.8753 30.0963 25.8753C31.1463 25.8753 32.0001 25.0247 32.0001 23.9791V17.2185C32.0001 14.8929 30.0963 13.0004 27.7564 13.0004Z"
+                    fill="#2405F2"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-bold">Monetize Your Creativity</h3>
+              <p>Earn through NFTs, subscriptions & exclusive content.</p>
+            </div>
+            <div class="grid gap-2 grid-cols-1 p-2 bg-white rounded-md">
+              <div class="icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16 0C7.21187 0 0 7.21187 0 16C0 24.7881 7.21187 32 16 32C24.7881 32 32 24.7881 32 16C32 7.21187 24.7881 0 16 0ZM14.0637 23.2775L7.05713 16.271L9.7085 13.6196L14.1864 18.0975L23.1759 9.9255L25.6991 12.6996L14.0637 23.2775Z"
+                    fill="#2405F2"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-bold">Own Your Work</h3>
+              <p>Protect your content with blockchain technology.</p>
+            </div>
+            <div class="grid gap-2 grid-cols-1 p-2 bg-white rounded-md">
+              <div class="icon">
+                <svg
+                  width="35"
+                  height="35"
+                  viewBox="0 0 35 35"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_1939)">
+                    <path
+                      d="M2.64172 9.89299L9.89237 2.64235L8.68379 1.43377C6.68481 -0.565208 3.43213 -0.565208 1.43341 1.43404C0.464898 2.40229 -0.0683594 3.68964 -0.0683594 5.05923C-0.0683594 6.42856 0.464898 7.71617 1.43341 8.68442L2.64172 9.89299Z"
+                      fill="#2405F2"
+                    />
+                    <path
+                      d="M4.0918 11.3426L6.992 8.44238L11.1478 12.5982L8.24757 15.4984L4.0918 11.3426Z"
+                      fill="#2405F2"
+                    />
+                    <path
+                      d="M8.44238 6.992L11.3426 4.0918L15.4984 8.24731L12.5982 11.1475L8.44238 6.992Z"
+                      fill="#2405F2"
+                    />
+                    <path
+                      d="M24.9643 30.764C24.9643 30.7643 24.9643 30.7643 24.964 30.7643L24.4863 31.2423L33.5261 34.8581C33.6494 34.9075 33.7784 34.9315 33.9066 34.9315C34.1736 34.9315 34.4358 34.8271 34.6318 34.6311C34.9218 34.3411 35.011 33.9061 34.8588 33.5251L31.243 24.4854L24.9643 30.764Z"
+                      fill="#2405F2"
+                    />
+                    <path
+                      d="M19.3652 26.615L22.2654 23.7148L25.6888 27.1384L22.7886 30.0386L19.3652 26.615Z"
+                      fill="#2405F2"
+                    />
+                    <path
+                      d="M23.7148 22.2657L26.615 19.3652L30.0386 22.7888L27.1384 25.689L23.7148 22.2657Z"
+                      fill="#2405F2"
+                    />
+                    <path
+                      d="M8.80609 27.5075C8.40555 27.9078 8.40555 28.5572 8.80609 28.9575L11.4646 31.616L8.44934 34.6313C8.04907 35.0318 7.39965 35.0318 6.99937 34.6313L0.232049 27.864C-0.168495 27.4637 -0.168495 26.8143 0.232049 26.414L26.414 0.232049C26.8143 -0.168495 27.4637 -0.168495 27.864 0.232049L34.6313 6.99911C34.8316 7.19938 34.9317 7.46187 34.9317 7.72436C34.9317 7.98658 34.8316 8.24907 34.6313 8.44934L31.616 11.4646L27.9908 7.83918C27.5903 7.43864 26.9411 7.43864 26.5406 7.83918C26.1403 8.23973 26.1403 8.88887 26.5406 9.28942L30.1658 12.9146L27.8757 15.2049L25.2172 12.5461C24.8169 12.1458 24.1675 12.1458 23.7669 12.5461C23.3667 12.9467 23.3667 13.5958 23.7669 13.9963L26.4255 16.6549L24.1354 18.9452L20.5103 15.3197C20.1097 14.9195 19.4606 14.9195 19.06 15.3197C18.6597 15.7203 18.6597 16.3694 19.06 16.77L22.6852 20.3952L20.3952 22.6855L17.7366 20.0269C17.3361 19.6264 16.6869 19.6264 16.2864 20.0269C15.8861 20.4272 15.8861 21.0764 16.2864 21.4769L18.9449 24.1354L16.6549 26.4258L13.0297 22.8003C12.6292 22.4 11.98 22.4 11.5795 22.8003C11.1792 23.2008 11.1792 23.85 11.5795 24.2505L15.2047 27.8757L12.9146 30.166L10.2561 27.5075C9.85579 27.107 9.20637 27.107 8.80609 27.5075Z"
+                      fill="#2405F2"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_1939">
+                      <rect width="35" height="35" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <h3 class="font-bold">Engage with Fans</h3>
+              <p>Build deeper connections and loyal communities.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="person" class="padding-section bg-[#f4f6fc]">
+        <div class="container grid grid-cols-1 md:grid-cols-12 gap-4">
+          <div class="md:col-span-4">
+            <h2 class="h2">Voices of our Casters</h2>
+            <p class="p">Creators worldwide share how they thrive with Kilppd.</p>
+          </div>
+          <div class="slider-container md:col-span-8">
+            <div id="person-keen-slider" class="keen-slider person">
+              <div class="keen-slider__slide number-slide1">
+                <div>
+                  <p>
+                    "Kilppd revolutionized how I view my content's value. The
+                    ability to monetize through NFTs and exclusive memberships
+                    is a game-changer. Crucially, the blockchain protection
+                    guarantees my fans receive authentic, AI-safe content. My
+                    career finally feels future-proof and genuinely rewarding."
+                  </p>
+                </div>
+                <div class="author-details flex items-center mg-10 gap-2">
+                  <div><img class="person-img" src="assets/profilepic.png" alt="" /></div>
+                  <div>
+                    <strong>Marcus Chen,</strong>
+                    <p>Crypto Artist & Live Commentator</p>
+                  </div>
+                </div>
+              </div>
+              <div class="keen-slider__slide number-slide2">
+                <div>
+                  <p>
+                    "The 'Live Safe' technology was what brought me to Kilppd.
+                    Knowing my work is protected from AI replication gives me
+                    peace of mind. Beyond safety, the platform has fostered a
+                    sense of community and deep engagement I never found on
+                    other sites. It's more than streaming; it's owning my
+                    legacy."
+                  </p>
+                </div>
+                <div class="author-details flex items-center mg-10 gap-2">
+                  <div><img class="person-img" src="assets/profilepic.png" alt="" /></div>
+                  <div>
+                    <strong>Sophia Bell,</strong>
+                    <p>Digital Creator & Tech Reviewer</p>
+                  </div>
+                </div>
+              </div>
+              <div class="keen-slider__slide number-slide3">
+                <div>
+                  <p>
+                    "What sets Kilppd apart is the live-first approach. It
+                    forces authenticity, and my audience loves that genuine
+                    connection. They know what they are seeing is real and
+                    unaltered. This focus on unfiltered moments has drastically
+                    increased my viewer retention and the loyalty of my fan
+                    base."
+                  </p>
+                </div>
+                <div class="author-details flex items-center mg-10 gap-2">
+                  <div><img class="person-img" src="assets/profilepic.png" alt="" /></div>
+                  <div>
+                    <strong>Alex Ramirez,</strong> <p>Gaming Caster</p>
+                  </div>
+                </div>
+              </div>
+              <div class="keen-slider__slide number-slide4">
+                <div>
+                  <p>
+                    "Kilppd has been instrumental in turning my passion into a
+                    sustainable business. The platform gives me the tools to
+                    diversify my income far beyond simple ads—think tickets for
+                    live events and premium content subscriptions. It’s the
+                    perfect ecosystem to grow and earn with full control over my
+                    output."
+                  </p>
+                </div>
+                <div class="author-details flex items-center mg-10 gap-2">
+                  <div><img class="person-img" src="assets/profilepic.png" alt="" /></div>
+                  <div>
+                    <strong>Chloe Wang,</strong> <p>Lifestyle Vlogger</p>
+                  </div>
+                </div>
+              </div>
+              <div class="keen-slider__slide number-slide5">
+                <div>
+                  <p>
+                    "Kilppd is the only platform that truly values the creator.
+                    The combination of robust content protection, flexible
+                    monetization via NFTs, and a commitment to live, authentic
+                    interaction means I can finally focus 100% on creativity,
+                    knowing my work and income are secure."
+                  </p>
+                </div>
+                <div class="author-details flex items-center mg-10 gap-2">
+                  <div><img class="person-img" src="assets/profilepic.png" alt="" /></div>
+                  <div>
+                    <strong>Noah Peters,</strong>
+                    <p>Music Producer & Live DJ</p>
+                  </div>
+                </div>
+              </div>
+              <div class="keen-slider__slide number-slide6">
+                <div>
+                  <p>
+                    "Kilppd has transformed the way I connect with my fans. The
+                    live-first creation approach assures my audience of genuine,
+                    unaltered content every time. Since joining Kilppd, I've not
+                    only strengthened my community bonds but also diversified my
+                    income streams, making creativity a sustainable endeavor for
+                    life."
+                  </p>
+                </div>
+                <div class="author-details flex items-center mg-10 gap-2">
+                  <div><div><img class="person-img" src="assets/profilepic.png" alt="" /></div></div>
+                  <div>
+                    <strong>Elena Rodriguez,</strong>
+                    <p>Creative Director at Fiverr</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="person-slider-nav" class="slider-nav stack">
+              <button class="nav-arrow prev" aria-label="Previous">&lt;</button>
+              <button class="nav-arrow next" aria-label="Next">&gt;</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="questions" class="padding-section ">
+        <div class="container grid grid-cols-1 md:grid-cols-12 gap-4">
+          <div class="md:col-span-6">
+            <h2 class="h2">How It Works</h2>
+            <a  class="read-more-link text-blue-800" href="#">Contact us for more info</a>
+          </div>
+          <div class="md:col-span-6">
+            <details open>
+              <summary>
+                <span class="number">01</span>
+                Sign up & create your profile.
+              </summary>
+              <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+            </details>
+            <details>
+              <summary>
+                <span class="number">02</span>
+                Upload live or recorded content.
+              </summary>
+              <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+            </details>
+            <details>
+              <summary>
+                <span class="number">03</span>
+                Monetize through tokens, NFTs & memberships.
+              </summary>
+              <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+            </details>
+            <details>
+              <summary>
+                <span class="number">04</span>
+                Get paid and grow your audience.
+              </summary>
+              <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+      <section id="join" class="padding-section">
+        <div class="container grid grid-cols-1 md:grid-cols-12">
+          <div class="join-content md:col-span-6">
+            <h2>Join Our Creative Community</h2>
+            <p>
+              Stay updated with our latest innovations and exclusive insights
+              from Kilppd.
+            </p>
+          </div>
+          <div class="join-form md:col-span-6">
+            <h2>Join us</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore.
+            </p>
+            <form action="" class="email-input">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="creator@kilppdmail.com"
+              />
+              <input type="submit" value="Get in touch" class="submit-btn" />
+            </form>
+          </div>
+        </div>
+      </section>
+      <section id="blog" class="padding-section">
+        <div class="container grid grid-cols-1 gap-4">
+          <div>
+            <h2 class="h2">Our Blog</h2>
+          </div>
+          <div class="grid md:grid-cols-3 gap-8">
+            <article class="post-card">
+              <div class="card-image-placeholder"></div>
+              <div class="card-content">
+                <span class="post-date">19 Jan 2022</span>
+                <h3 class="post-title">
+                  <a href="#"
+                    >Kilppd's Live-First Model: A New Era for Content
+                    Creators</a
+                  >
+                </h3>
+                <p class="post-excerpt">
+                  Discover Kilppd's live-first content model that brings
+                  authenticity to creators. It ensures authentic, verified, and
+                  secure content...
+                </p>
+                <div>
+                  <a href="#" class="read-more-link">
+                    Read More <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="post-card">
+              <div class="card-image-placeholder"></div>
+              <div class="card-content">
+                <span class="post-date">19 Jan 2022</span>
+                <h3 class="post-title">
+                  <a href="#"
+                    >Monetizing Creativity: How Kilppd Revolutionizes
+                    Revenue...</a
+                  >
+                </h3>
+                <p class="post-excerpt">
+                  Kilppd redefines how artists monetize creativity, offering
+                  dynamic ways to transform their art into sustainable revenue
+                  streams. Explore strategies ...
+                </p>
+                <a href="#" class="read-more-link">
+                  Read More <span>&rarr;</span>
+                </a>
+              </div>
+            </article>
+            <article class="post-card">
+              <div class="card-image-placeholder"></div>
+              <div class="card-content">
+                <span class="post-date">19 Jan 2022</span>
+                <h3 class="post-title">
+                  <a href="#"
+                    >Preserving Authenticity: Kilppd's Answer to Al Threats in
+                    Content ...</a
+                  >
+                </h3>
+                <p class="post-excerpt">
+                  Explore Kilppd's innovative approach to preserving genuine
+                  content against Al's overreach. Discover how our platform
+                  empowers creators to produce...
+                </p>
+                <a href="#" class="read-more-link">
+                  Read More <span>&rarr;</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="site-footer">
+      <div class="container grid grid-cols-1 md:grid-cols-12 gap-8 bg-[#1d1e54] ">
+        <div class="footer-brand md:col-span-6 text-white">
+          <h3 class="font-bold">KILPPD</h3>
           <p>
-            KLIPPD: Revolutionizing the way casters create, monetize and share
+            KILPPD: Revolutionizing the way casters create, monetize and share
             authentic moments.
           </p>
-          <a href="#" class="hero-btn">Contact Us</a>
         </div>
-        <div class="hero-image">
-          <img
-            src="assets/Illustration.png"
-            alt="Illustration"
-            class="hero-image"
-          />
+        <div class="grid grid-cols-4 gap-8 md:col-span-6 text-white">
+          <div class="footer-links-col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="#">Overview</a></li>
+              <li><a href="#">Customers</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">about</a></li>
+              <li><a href="#">jobs</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>legal</h4>
+            <ul>
+              <li><a href="#">terms</a></li>
+              <li><a href="#">Privacy</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section id="app" class="app">
-      <div class="container">
-        <div class="app-content">
-          <h2>Get The App Here</h2>
-          <p>
-            Join Klipped and take the experience of making content to a new
-            level, make money or see whats special out there
-          </p>
+        <div class="grid grid-cols-2 gap-8 md:col-span-6 bg-[#fcd980] p-4">
+          <div>
+            <p>Email me at</p>
+            <a href="mailto:contact@website.com">contact@website.com</a>
+          </div>
+          <div>
+            <p>Call us</p>
+            <strong>+1 555 65768789</strong>
+          </div>
         </div>
-        <div class="main-app-buttons">
+        <div class="grid grid-cols-2 gap-4 md:col-span-6">
           <a href="#" aria-label="Get it on Google Play">
             <img src="assets/googleplay.svg" alt="Get it on Google Play" /> </a
           ><a href="#" aria-label="Download on the App Store">
@@ -91,732 +841,9 @@
           </a>
         </div>
       </div>
-    </section>
-    <section id="about" class="about">
-      <div class="container">
-        <div class="about-content">
-          <h2>About us</h2>
-          <p>The #1 Platform for Live Casters</p>
-          <a href="#" class="link">
-            Get in touch with us <span>&rarr;</span>
-          </a>
-        </div>
-        <div class="cards_grid">
-          <div class="feature-card">
-            <div class="icon">
-              <svg
-                width="50"
-                height="50"
-                viewBox="0 0 50 50"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="50" height="50" rx="8" fill="#2405F2" />
-                <mask
-                  id="mask0_1_2001"
-                  style="mask-type: alpha"
-                  maskUnits="userSpaceOnUse"
-                  x="0"
-                  y="0"
-                  width="50"
-                  height="50"
-                >
-                  <rect width="50" height="50" rx="8" fill="#5C5E84" />
-                </mask>
-                <g mask="url(#mask0_1_2001)">
-                  <rect
-                    x="-26"
-                    y="27"
-                    width="50"
-                    height="50"
-                    rx="8"
-                    fill="#FCD980"
-                  />
-                  <rect
-                    x="8"
-                    y="-9"
-                    width="50"
-                    height="50"
-                    rx="8"
-                    fill="#5239FA"
-                  />
-                </g>
-                <path
-                  d="M17.124 29.218C16.428 28.054 16.08 26.452 16.08 24.412C16.08 22.384 16.428 20.788 17.124 19.624C17.832 18.46 19.044 17.878 20.76 17.878C22.476 17.878 23.682 18.46 24.378 19.624C25.086 20.788 25.44 22.384 25.44 24.412C25.44 26.452 25.086 28.054 24.378 29.218C23.682 30.382 22.476 30.964 20.76 30.964C19.044 30.964 17.832 30.382 17.124 29.218ZM23.226 26.842C23.358 26.182 23.424 25.372 23.424 24.412C23.424 23.464 23.358 22.66 23.226 22C23.106 21.34 22.854 20.8 22.47 20.38C22.086 19.96 21.516 19.75 20.76 19.75C20.004 19.75 19.434 19.96 19.05 20.38C18.666 20.8 18.408 21.34 18.276 22C18.156 22.66 18.096 23.464 18.096 24.412C18.096 25.372 18.156 26.182 18.276 26.842C18.408 27.502 18.666 28.042 19.05 28.462C19.434 28.882 20.004 29.092 20.76 29.092C21.516 29.092 22.086 28.882 22.47 28.462C22.854 28.042 23.106 27.502 23.226 26.842ZM27.3413 20.092V18.22H31.0853V31H29.0153V20.092H27.3413Z"
-                  fill="white"
-                />
-              </svg>
-            </div>
-            <h3>Subs & Events</h3>
-            <p>
-              Offer memberships, subscriptions, and live events tailored to
-              their audience.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="icon">
-              <svg
-                width="50"
-                height="50"
-                viewBox="0 0 50 50"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="50" height="50" rx="8" fill="#2405F2" />
-                <mask
-                  id="mask0_1_2023"
-                  style="mask-type: alpha"
-                  maskUnits="userSpaceOnUse"
-                  x="0"
-                  y="0"
-                  width="50"
-                  height="50"
-                >
-                  <rect width="50" height="50" rx="8" fill="#5C5E84" />
-                </mask>
-                <g mask="url(#mask0_1_2023)">
-                  <rect
-                    x="-26"
-                    y="27"
-                    width="50"
-                    height="50"
-                    rx="8"
-                    fill="#FCD980"
-                  />
-                  <rect
-                    x="8"
-                    y="-9"
-                    width="50"
-                    height="50"
-                    rx="8"
-                    fill="#5239FA"
-                  />
-                </g>
-                <path
-                  d="M17.124 29.218C16.428 28.054 16.08 26.452 16.08 24.412C16.08 22.384 16.428 20.788 17.124 19.624C17.832 18.46 19.044 17.878 20.76 17.878C22.476 17.878 23.682 18.46 24.378 19.624C25.086 20.788 25.44 22.384 25.44 24.412C25.44 26.452 25.086 28.054 24.378 29.218C23.682 30.382 22.476 30.964 20.76 30.964C19.044 30.964 17.832 30.382 17.124 29.218ZM23.226 26.842C23.358 26.182 23.424 25.372 23.424 24.412C23.424 23.464 23.358 22.66 23.226 22C23.106 21.34 22.854 20.8 22.47 20.38C22.086 19.96 21.516 19.75 20.76 19.75C20.004 19.75 19.434 19.96 19.05 20.38C18.666 20.8 18.408 21.34 18.276 22C18.156 22.66 18.096 23.464 18.096 24.412C18.096 25.372 18.156 26.182 18.276 26.842C18.408 27.502 18.666 28.042 19.05 28.462C19.434 28.882 20.004 29.092 20.76 29.092C21.516 29.092 22.086 28.882 22.47 28.462C22.854 28.042 23.106 27.502 23.226 26.842ZM28.7812 28.174C29.9333 27.19 30.8393 26.38 31.4993 25.744C32.1593 25.108 32.7053 24.454 33.1373 23.782C33.5813 23.098 33.8033 22.426 33.8033 21.766C33.8033 21.082 33.6293 20.542 33.2813 20.146C32.9453 19.75 32.4113 19.552 31.6793 19.552C30.9713 19.552 30.4193 19.78 30.0233 20.236C29.6393 20.68 29.4353 21.28 29.4113 22.036H27.4313C27.4673 20.668 27.8753 19.624 28.6553 18.904C29.4473 18.172 30.4493 17.806 31.6613 17.806C32.5373 17.806 33.2873 17.968 33.9113 18.292C34.5353 18.616 35.0093 19.072 35.3333 19.66C35.6693 20.248 35.8373 20.92 35.8373 21.676C35.8373 22.504 35.6153 23.308 35.1713 24.088C34.7393 24.868 34.2233 25.57 33.6233 26.194C33.0233 26.818 32.2553 27.544 31.3193 28.372L30.4913 29.11H36.1973V30.82H27.4493V29.326L28.7812 28.174Z"
-                  fill="white"
-                />
-              </svg>
-            </div>
-            <h3>NFTs & Collabs</h3>
-            <p>
-              Monetize through NFTs, audience investments, and collaborations.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="icon">
-              <svg
-                width="50"
-                height="50"
-                viewBox="0 0 50 50"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="50" height="50" rx="8" fill="#2405F2" />
-                <mask
-                  id="mask0_1_2012"
-                  style="mask-type: alpha"
-                  maskUnits="userSpaceOnUse"
-                  x="0"
-                  y="0"
-                  width="50"
-                  height="50"
-                >
-                  <rect width="50" height="50" rx="8" fill="#5C5E84" />
-                </mask>
-                <g mask="url(#mask0_1_2012)">
-                  <rect
-                    x="-26"
-                    y="27"
-                    width="50"
-                    height="50"
-                    rx="8"
-                    fill="#FCD980"
-                  />
-                  <rect
-                    x="8"
-                    y="-9"
-                    width="50"
-                    height="50"
-                    rx="8"
-                    fill="#5239FA"
-                  />
-                </g>
-                <path
-                  d="M17.124 29.218C16.428 28.054 16.08 26.452 16.08 24.412C16.08 22.384 16.428 20.788 17.124 19.624C17.832 18.46 19.044 17.878 20.76 17.878C22.476 17.878 23.682 18.46 24.378 19.624C25.086 20.788 25.44 22.384 25.44 24.412C25.44 26.452 25.086 28.054 24.378 29.218C23.682 30.382 22.476 30.964 20.76 30.964C19.044 30.964 17.832 30.382 17.124 29.218ZM23.226 26.842C23.358 26.182 23.424 25.372 23.424 24.412C23.424 23.464 23.358 22.66 23.226 22C23.106 21.34 22.854 20.8 22.47 20.38C22.086 19.96 21.516 19.75 20.76 19.75C20.004 19.75 19.434 19.96 19.05 20.38C18.666 20.8 18.408 21.34 18.276 22C18.156 22.66 18.096 23.464 18.096 24.412C18.096 25.372 18.156 26.182 18.276 26.842C18.408 27.502 18.666 28.042 19.05 28.462C19.434 28.882 20.004 29.092 20.76 29.092C21.516 29.092 22.086 28.882 22.47 28.462C22.854 28.042 23.106 27.502 23.226 26.842ZM31.8773 17.572C32.7173 17.572 33.4433 17.722 34.0553 18.022C34.6673 18.322 35.1293 18.73 35.4413 19.246C35.7533 19.762 35.9093 20.344 35.9093 20.992C35.9093 21.736 35.7113 22.372 35.3153 22.9C34.9193 23.428 34.4453 23.782 33.8933 23.962V24.034C34.6013 24.25 35.1533 24.646 35.5493 25.222C35.9453 25.786 36.1433 26.512 36.1433 27.4C36.1433 28.108 35.9813 28.738 35.6573 29.29C35.3333 29.842 34.8533 30.28 34.2173 30.604C33.5813 30.916 32.8193 31.072 31.9313 31.072C30.6353 31.072 29.5673 30.742 28.7273 30.082C27.8993 29.41 27.4553 28.45 27.3953 27.202H29.3753C29.4233 27.838 29.6693 28.36 30.1133 28.768C30.5573 29.164 31.1573 29.362 31.9133 29.362C32.6453 29.362 33.2093 29.164 33.6053 28.768C34.0013 28.36 34.1993 27.838 34.1993 27.202C34.1993 26.362 33.9293 25.768 33.3893 25.42C32.8613 25.06 32.0453 24.88 30.9413 24.88H30.4733V23.188H30.9593C31.9313 23.176 32.6693 23.014 33.1733 22.702C33.6893 22.39 33.9473 21.898 33.9473 21.226C33.9473 20.65 33.7613 20.194 33.3893 19.858C33.0173 19.51 32.4893 19.336 31.8053 19.336C31.1333 19.336 30.6113 19.51 30.2393 19.858C29.8673 20.194 29.6453 20.614 29.5733 21.118H27.5753C27.6473 20.002 28.0733 19.132 28.8533 18.508C29.6453 17.884 30.6533 17.572 31.8773 17.572Z"
-                  fill="white"
-                />
-              </svg>
-            </div>
-            <h3>Fans & AI Safety</h3>
-            <p>
-              Strengthen their connection with fans while future-proofing their
-              work against Al replication.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="icon">
-              <svg
-                width="50"
-                height="50"
-                viewBox="0 0 50 50"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="50" height="50" rx="8" fill="#2405F2" />
-                <mask
-                  id="mask0_1_2034"
-                  style="mask-type: alpha"
-                  maskUnits="userSpaceOnUse"
-                  x="0"
-                  y="0"
-                  width="50"
-                  height="50"
-                >
-                  <rect width="50" height="50" rx="8" fill="#5C5E84" />
-                </mask>
-                <g mask="url(#mask0_1_2034)">
-                  <rect
-                    x="-26"
-                    y="27"
-                    width="50"
-                    height="50"
-                    rx="8"
-                    fill="#FCD980"
-                  />
-                  <rect
-                    x="8"
-                    y="-9"
-                    width="50"
-                    height="50"
-                    rx="8"
-                    fill="#5239FA"
-                  />
-                </g>
-                <path
-                  d="M17.124 29.218C16.428 28.054 16.08 26.452 16.08 24.412C16.08 22.384 16.428 20.788 17.124 19.624C17.832 18.46 19.044 17.878 20.76 17.878C22.476 17.878 23.682 18.46 24.378 19.624C25.086 20.788 25.44 22.384 25.44 24.412C25.44 26.452 25.086 28.054 24.378 29.218C23.682 30.382 22.476 30.964 20.76 30.964C19.044 30.964 17.832 30.382 17.124 29.218ZM23.226 26.842C23.358 26.182 23.424 25.372 23.424 24.412C23.424 23.464 23.358 22.66 23.226 22C23.106 21.34 22.854 20.8 22.47 20.38C22.086 19.96 21.516 19.75 20.76 19.75C20.004 19.75 19.434 19.96 19.05 20.38C18.666 20.8 18.408 21.34 18.276 22C18.156 22.66 18.096 23.464 18.096 24.412C18.096 25.372 18.156 26.182 18.276 26.842C18.408 27.502 18.666 28.042 19.05 28.462C19.434 28.882 20.004 29.092 20.76 29.092C21.516 29.092 22.086 28.882 22.47 28.462C22.854 28.042 23.106 27.502 23.226 26.842ZM27.3593 28.264V26.716L33.4073 18.04H35.8913V26.482H37.5653V28.264H35.8913V31H33.8753V28.264H27.3593ZM33.9653 20.128L29.7173 26.482H33.9653V20.128Z"
-                  fill="white"
-                />
-              </svg>
-            </div>
-            <h3>Grow & Earn</h3>
-            <p>
-              Expand their reach and revenue through exclusive content, premium
-              experiences, and direct engagement.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="gallery" class="gallery">
-      <div class="container">
-        <div class="content">
-          <div class="paragraph">
-            <h2>Empower Your Creativity with Kilppd</h2>
-            <p>
-              Discover the future of genuine content creation and monetization.
-            </p>
-          </div>
-          <div class="link">
-            <a href="#" class="view-more-link">
-              view More <span>&rarr;</span>
-            </a>
-          </div>
-        </div>
-        <div class="gallery-grid">
-          <div class="card1">
-            <h2>Content Safeguarding</h2>
-            <div class="light-paragraph">
-              <p>
-                <strong>CASTERS:</strong>
-                Shield your creations with Kilppd's Live Safe to safeguard your
-                work from duplication.
-              </p>
-              <p>
-                <strong>FANS:</strong>
-                INVEST in original authenticated content that will only raise in
-                value.
-              </p>
-            </div>
-            <div class="link">
-              <a href="#" class="learn-more">Learn more &rarr;</a>
-            </div>
-          </div>
-          <div class="card2"></div>
-          <div class="card3-4">
-            <div class="card3">
-              <h2>Authentic Engagement</h2>
-              <div class="link">
-                <a href="#" class="learn-more">Learn more &rarr;</a>
-              </div>
-            </div>
-            <div class="card4"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="features-card" class="features-card">
-      <div class="container">
-        <div class="paragraph-features">
-          <p>Features</p>
-          <h2>Key Features</h2>
-        </div>
-        <div class="features-cards-grid">
-          <div class="feature-card">
-            <div class="icon">
-              <svg
-                width="32"
-                height="28"
-                viewBox="0 0 32 28"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15.9999 10.8749C19.0029 10.8749 21.4373 8.44047 21.4373 5.43745C21.4373 2.43443 19.0029 0 15.9999 0C12.9968 0 10.5624 2.43443 10.5624 5.43745C10.5624 8.44047 12.9968 10.8749 15.9999 10.8749Z"
-                  fill="#2405F2"
-                />
-                <path
-                  d="M27 10.8749C28.8984 10.8749 30.4374 9.33593 30.4374 7.43747C30.4374 5.53901 28.8984 4 27 4C25.1015 4 23.5625 5.53901 23.5625 7.43747C23.5625 9.33593 25.1015 10.8749 27 10.8749Z"
-                  fill="#2405F2"
-                />
-                <path
-                  d="M4.99995 10.8749C6.89842 10.8749 8.43742 9.33593 8.43742 7.43747C8.43742 5.53901 6.89842 4 4.99995 4C3.10149 4 1.56248 5.53901 1.56248 7.43747C1.56248 9.33593 3.10149 10.8749 4.99995 10.8749Z"
-                  fill="#2405F2"
-                />
-                <path
-                  d="M8.3868 13.9615C7.03369 12.8528 5.80826 12.9996 4.24371 12.9996C1.90373 12.9996 0 14.8921 0 17.2177V24.0432C0 25.0532 0.824368 25.8745 1.83811 25.8745C6.21469 25.8745 5.68745 25.9537 5.68745 25.6857C5.68745 20.8491 5.11458 17.3022 8.3868 13.9615Z"
-                  fill="#2405F2"
-                />
-                <path
-                  d="M17.4882 13.0249C14.7555 12.797 12.3802 13.0275 10.3314 14.7187C6.90288 17.4649 7.56268 21.1625 7.56268 25.6861C7.56268 26.8829 8.53642 27.8748 9.75141 27.8748C22.9439 27.8748 23.469 28.3003 24.2513 26.5679C24.5078 25.9821 24.4375 26.1682 24.4375 20.5636C24.4375 16.112 20.583 13.0249 17.4882 13.0249Z"
-                  fill="#2405F2"
-                />
-                <path
-                  d="M27.7564 13.0004C26.1833 13.0004 24.9646 12.8552 23.6133 13.9623C26.8611 17.2783 26.3126 20.5832 26.3126 25.6865C26.3126 25.9562 25.8749 25.8753 30.0963 25.8753C31.1463 25.8753 32.0001 25.0247 32.0001 23.9791V17.2185C32.0001 14.8929 30.0963 13.0004 27.7564 13.0004Z"
-                  fill="#2405F2"
-                />
-              </svg>
-            </div>
-            <h3>Monetize Your Creativity</h3>
-            <p>Earn through NFTs, subscriptions & exclusive content.</p>
-          </div>
-          <div class="feature-card">
-            <div class="icon">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M16 0C7.21187 0 0 7.21187 0 16C0 24.7881 7.21187 32 16 32C24.7881 32 32 24.7881 32 16C32 7.21187 24.7881 0 16 0ZM14.0637 23.2775L7.05713 16.271L9.7085 13.6196L14.1864 18.0975L23.1759 9.9255L25.6991 12.6996L14.0637 23.2775Z"
-                  fill="#2405F2"
-                />
-              </svg>
-            </div>
-            <h3>Own Your Work</h3>
-            <p>Protect your content with blockchain technology.</p>
-          </div>
-          <div class="feature-card">
-            <div class="icon">
-              <svg
-                width="35"
-                height="35"
-                viewBox="0 0 35 35"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g clip-path="url(#clip0_1_1939)">
-                  <path
-                    d="M2.64172 9.89299L9.89237 2.64235L8.68379 1.43377C6.68481 -0.565208 3.43213 -0.565208 1.43341 1.43404C0.464898 2.40229 -0.0683594 3.68964 -0.0683594 5.05923C-0.0683594 6.42856 0.464898 7.71617 1.43341 8.68442L2.64172 9.89299Z"
-                    fill="#2405F2"
-                  />
-                  <path
-                    d="M4.0918 11.3426L6.992 8.44238L11.1478 12.5982L8.24757 15.4984L4.0918 11.3426Z"
-                    fill="#2405F2"
-                  />
-                  <path
-                    d="M8.44238 6.992L11.3426 4.0918L15.4984 8.24731L12.5982 11.1475L8.44238 6.992Z"
-                    fill="#2405F2"
-                  />
-                  <path
-                    d="M24.9643 30.764C24.9643 30.7643 24.9643 30.7643 24.964 30.7643L24.4863 31.2423L33.5261 34.8581C33.6494 34.9075 33.7784 34.9315 33.9066 34.9315C34.1736 34.9315 34.4358 34.8271 34.6318 34.6311C34.9218 34.3411 35.011 33.9061 34.8588 33.5251L31.243 24.4854L24.9643 30.764Z"
-                    fill="#2405F2"
-                  />
-                  <path
-                    d="M19.3652 26.615L22.2654 23.7148L25.6888 27.1384L22.7886 30.0386L19.3652 26.615Z"
-                    fill="#2405F2"
-                  />
-                  <path
-                    d="M23.7148 22.2657L26.615 19.3652L30.0386 22.7888L27.1384 25.689L23.7148 22.2657Z"
-                    fill="#2405F2"
-                  />
-                  <path
-                    d="M8.80609 27.5075C8.40555 27.9078 8.40555 28.5572 8.80609 28.9575L11.4646 31.616L8.44934 34.6313C8.04907 35.0318 7.39965 35.0318 6.99937 34.6313L0.232049 27.864C-0.168495 27.4637 -0.168495 26.8143 0.232049 26.414L26.414 0.232049C26.8143 -0.168495 27.4637 -0.168495 27.864 0.232049L34.6313 6.99911C34.8316 7.19938 34.9317 7.46187 34.9317 7.72436C34.9317 7.98658 34.8316 8.24907 34.6313 8.44934L31.616 11.4646L27.9908 7.83918C27.5903 7.43864 26.9411 7.43864 26.5406 7.83918C26.1403 8.23973 26.1403 8.88887 26.5406 9.28942L30.1658 12.9146L27.8757 15.2049L25.2172 12.5461C24.8169 12.1458 24.1675 12.1458 23.7669 12.5461C23.3667 12.9467 23.3667 13.5958 23.7669 13.9963L26.4255 16.6549L24.1354 18.9452L20.5103 15.3197C20.1097 14.9195 19.4606 14.9195 19.06 15.3197C18.6597 15.7203 18.6597 16.3694 19.06 16.77L22.6852 20.3952L20.3952 22.6855L17.7366 20.0269C17.3361 19.6264 16.6869 19.6264 16.2864 20.0269C15.8861 20.4272 15.8861 21.0764 16.2864 21.4769L18.9449 24.1354L16.6549 26.4258L13.0297 22.8003C12.6292 22.4 11.98 22.4 11.5795 22.8003C11.1792 23.2008 11.1792 23.85 11.5795 24.2505L15.2047 27.8757L12.9146 30.166L10.2561 27.5075C9.85579 27.107 9.20637 27.107 8.80609 27.5075Z"
-                    fill="#2405F2"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_1_1939">
-                    <rect width="35" height="35" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </div>
-            <h3>Engage with Fans</h3>
-            <p>Build deeper connections and loyal communities.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="person" class="person">
-      <div class="container">
-        <div class="person-intro">
-          <h2>Voices of our Casters</h2>
-          <p>Creators worldwide share how they thrive with Kilppd.</p>
-        </div>
-        <div class="slider-container">
-          <div id="person-keen-slider" class="keen-slider person">
-            <div class="keen-slider__slide number-slide1">
-              <div>
-                <p>
-                  "Kilppd revolutionized how I view my content's value. The
-                  ability to monetize through NFTs and exclusive memberships is
-                  a game-changer. Crucially, the blockchain protection
-                  guarantees my fans receive authentic, AI-safe content. My
-                  career finally feels future-proof and genuinely rewarding."
-                </p>
-              </div>
-              <div class="author-details">
-                <img src="assets/profilepic.png" alt="" />
-                <div>
-                  <strong>Marcus Chen,</strong>
-                  <span>Crypto Artist & Live Commentator</span>
-                </div>
-              </div>
-            </div>
-            <div class="keen-slider__slide number-slide2">
-              <div>
-                <p>
-                  "The 'Live Safe' technology was what brought me to Kilppd.
-                  Knowing my work is protected from AI replication gives me
-                  peace of mind. Beyond safety, the platform has fostered a
-                  sense of community and deep engagement I never found on other
-                  sites. It's more than streaming; it's owning my legacy."
-                </p>
-              </div>
-              <div class="author-details">
-                <img src="assets/profilepic.png" alt="" />
-                <div>
-                  <strong>Sophia Bell,</strong>
-                  <span>Digital Creator & Tech Reviewer</span>
-                </div>
-              </div>
-            </div>
-            <div class="keen-slider__slide number-slide3">
-              <div>
-                <p>
-                  "What sets Kilppd apart is the live-first approach. It forces
-                  authenticity, and my audience loves that genuine connection.
-                  They know what they are seeing is real and unaltered. This
-                  focus on unfiltered moments has drastically increased my
-                  viewer retention and the loyalty of my fan base."
-                </p>
-              </div>
-              <div class="author-details">
-                <img src="assets/profilepic.png" alt="" />
-                <div>
-                  <strong>Alex Ramirez,</strong> <span>Gaming Caster</span>
-                </div>
-              </div>
-            </div>
-            <div class="keen-slider__slide number-slide4">
-              <div>
-                <p>
-                  "Kilppd has been instrumental in turning my passion into a
-                  sustainable business. The platform gives me the tools to
-                  diversify my income far beyond simple ads—think tickets for
-                  live events and premium content subscriptions. It’s the
-                  perfect ecosystem to grow and earn with full control over my
-                  output."
-                </p>
-              </div>
-              <div class="author-details">
-                <img src="assets/profilepic.png" alt="" />
-                <div>
-                  <strong>Chloe Wang,</strong> <span>Lifestyle Vlogger</span>
-                </div>
-              </div>
-            </div>
-            <div class="keen-slider__slide number-slide5">
-              <div>
-                <p>
-                  "Kilppd is the only platform that truly values the creator.
-                  The combination of robust content protection, flexible
-                  monetization via NFTs, and a commitment to live, authentic
-                  interaction means I can finally focus 100% on creativity,
-                  knowing my work and income are secure."
-                </p>
-              </div>
-              <div class="author-details">
-                <img src="assets/profilepic.png" alt="" />
-                <div>
-                  <strong>Noah Peters,</strong>
-                  <span>Music Producer & Live DJ</span>
-                </div>
-              </div>
-            </div>
-            <div class="keen-slider__slide number-slide6">
-              <div>
-                <p>
-                  "Kilppd has transformed the way I connect with my fans. The
-                  live-first creation approach assures my audience of genuine,
-                  unaltered content every time. Since joining Kilppd, I've not
-                  only strengthened my community bonds but also diversified my
-                  income streams, making creativity a sustainable endeavor for
-                  life."
-                </p>
-              </div>
-              <div class="author-details">
-                <img src="assets/profilepic.png" alt="" />
-                <div>
-                  <strong>Elena Rodriguez,</strong>
-                  <span>Creative Director at Fiverr</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="person-slider-nav" class="slider-nav stack">
-            <button class="nav-arrow prev" aria-label="Previous">&lt;</button>
-            <button class="nav-arrow next" aria-label="Next">&gt;</button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="questions" class="questions">
-      <div class="container">
-        <div>
-          <h2>How It Works</h2>
-          <a href="#">Contact us for more info</a>
-        </div>
-        <div>
-          <details open>
-            <summary>
-              <span class="number">01</span>
-              Sign up & create your profile.
-            </summary>
-            <div class="content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </div>
-          </details>
-          <details>
-            <summary>
-              <span class="number">02</span>
-              Upload live or recorded content.
-            </summary>
-            <div class="content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </div>
-          </details>
-          <details>
-            <summary>
-              <span class="number">03</span>
-              Monetize through tokens, NFTs & memberships.
-            </summary>
-            <div class="content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </div>
-          </details>
-          <details>
-            <summary>
-              <span class="number">04</span>
-              Get paid and grow your audience.
-            </summary>
-            <div class="content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-    <section id="join" class="join">
-      <div class="container">
-        <div class="join-content">
-          <h2>Join Our Creative Community</h2>
-          <p>
-            Stay updated with our latest innovations and exclusive insights from
-            Kilppd.
-          </p>
-        </div>
-        <div class="join-form">
-          <h2>Join us</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore.
-          </p>
-          <form action="" class="email-input">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="creator@kilppdmail.com"
-            />
-            <input type="submit" value="Get in touch" class="submit-btn" />
-          </form>
-        </div>
-      </div>
-    </section>
-    <section id="blog" class="blog">
-      <div class="container">
-        <div>
-          <h2>Our Blog</h2>
-        </div>
-        <div class="post-cards">
-          <article class="post-card">
-            <div class="card-image-placeholder"></div>
-            <div class="card-content">
-              <span class="post-date">19 Jan 2022</span>
-              <h3 class="post-title">
-                <a href="#"
-                  >Kilppd's Live-First Model: A New Era for Content Creators</a
-                >
-              </h3>
-              <p class="post-excerpt">
-                Discover Kilppd's live-first content model that brings
-                authenticity to creators. It ensures authentic, verified, and
-                secure content...
-              </p>
-              <div>
-                <a href="#" class="read-more-link">
-                  Read More <span>&rarr;</span>
-                </a>
-              </div>
-            </div>
-          </article>
-          <article class="post-card">
-            <div class="card-image-placeholder"></div>
-            <div class="card-content">
-              <span class="post-date">19 Jan 2022</span>
-              <h3 class="post-title">
-                <a href="#"
-                  >Monetizing Creativity: How Kilppd Revolutionizes
-                  Revenue...</a
-                >
-              </h3>
-              <p class="post-excerpt">
-                Kilppd redefines how artists monetize creativity, offering
-                dynamic ways to transform their art into sustainable revenue
-                streams. Explore strategies ...
-              </p>
-              <a href="#" class="read-more-link">
-                Read More <span>&rarr;</span>
-              </a>
-            </div>
-          </article>
-          <article class="post-card">
-            <div class="card-image-placeholder"></div>
-            <div class="card-content">
-              <span class="post-date">19 Jan 2022</span>
-              <h3 class="post-title">
-                <a href="#"
-                  >Preserving Authenticity: Kilppd's Answer to Al Threats in
-                  Content ...</a
-                >
-              </h3>
-              <p class="post-excerpt">
-                Explore Kilppd's innovative approach to preserving genuine
-                content against Al's overreach. Discover how our platform
-                empowers creators to produce...
-              </p>
-              <a href="#" class="read-more-link">
-                Read More <span>&rarr;</span>
-              </a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-    <footer id="site-footer">
-      <div class="container">
-        <div class="container-top">
-          <div class="footer-container">
-            <div class="footer-top-row">
-              <div class="footer-brand">
-                <h3>KILPPD</h3>
-                <p>
-                  KILPPD: Revolutionizing the way casters create, monetize and
-                  share authentic moments.
-                </p>
-              </div>
-              <div class="footer-links">
-                <div class="footer-links-col">
-                  <h4>Product</h4>
-                  <ul>
-                    <li><a href="#">Overview</a></li>
-                    <li><a href="#">Customers</a></li>
-                  </ul>
-                </div>
-                <div class="footer-links-col">
-                  <h4>Company</h4>
-                  <ul>
-                    <li><a href="#">about</a></li>
-                    <li><a href="#">jobs</a></li>
-                  </ul>
-                </div>
-                <div class="footer-links-col">
-                  <h4>Support</h4>
-                  <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-                <div class="footer-links-col">
-                  <h4>legal</h4>
-                  <ul>
-                    <li><a href="#">terms</a></li>
-                    <li><a href="#">Privacy</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="footer-bottom-row">
-              <div class="footer-contact-box">
-                <div class="contact-item">
-                  <span>Email me at</span>
-                  <a href="mailto:contact@website.com">contact@website.com</a>
-                </div>
-                <div class="contact-item">
-                  <span>Call us</span>
-                  <strong>+1 555 65768789</strong>
-                </div>
-              </div>
-              <div class="footer-app-buttons">
-                <a href="#" aria-label="Get it on Google Play">
-                  <img
-                    src="assets/googleplay.svg"
-                    alt="Get it on Google Play"
-                  /> </a
-                ><a href="#" aria-label="Download on the App Store">
-                  <img
-                    src="assets/appstore.png"
-                    alt="Download on the App Store"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-bottom">
-        <div class="footer-bottom">
-          <div class="footer-container">
-            <p>Copyright © 2025 Kilppd</p>
-          </div>
+      <div class="container flex justify-center py-8 px-4">
+        <div class="footer-container">
+          <p>Copyright © 2025 Kilppd</p>
         </div>
       </div>
     </footer>
